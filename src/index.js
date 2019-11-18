@@ -7,7 +7,7 @@ import manageBand from './reducers/manageBand'
 
 const store = createStore(
   manageBand,
-  window.__REDUX_DEVTOOLS_EXTENSION__ / window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 
