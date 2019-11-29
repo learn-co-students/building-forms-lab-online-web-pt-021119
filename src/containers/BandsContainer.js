@@ -5,12 +5,12 @@ import {addBand} from '../actions/bandActions'
 
 class BandsContainer extends Component {
   render() {
-		
+		debugger
     return(
 			
       <div>
         <BandInput addBand={this.props.addBand}/>
-				{this.props.state.bands.map(band => {
+				{this.props.bands.map(band => {
 					return <li>{band.name}</li>
 				})}
       </div>
@@ -19,7 +19,7 @@ class BandsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-	return {state}
+	return {bands: state.bands}
 }
 
 export default connect(mapStateToProps, {addBand})(BandsContainer)

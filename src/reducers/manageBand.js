@@ -1,10 +1,10 @@
 export default function manageBand(state = {
   bands: [],
 }, action) {
-	if (action.type === "ADD_BAND") {
-		state.bands.push(action.band)
-		return Object.assign({},state)
-	} else {
-		return state
-	}
+  switch (action.type) {
+    case 'ADD_BAND':
+      return { ...state, bands: [...state.bands, action.band] }
+    default:
+      return state;
+  }
 };
